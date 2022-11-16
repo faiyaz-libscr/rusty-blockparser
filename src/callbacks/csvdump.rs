@@ -186,7 +186,7 @@ impl TxInput {
 
 impl EvaluatedTxOut {
     #[inline]
-    fn as_csv(&self, txid: &str, index: u32) -> String {
+    fn as_csv(&self, txid: &str, index: usize) -> String {
         let address = match self.script.address.clone() {
             Some(address) => address,
             None => {
@@ -203,6 +203,6 @@ impl EvaluatedTxOut {
             //&self.out.value,
             //&utils::arr_to_hex(&self.out.script_pubkey),
             &self.script.address)
-        )
+        
     }
 }
